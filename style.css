@@ -12,9 +12,9 @@
 
 /* Root variables for reusable values */
 :root {
-    --main-bg-color: #efefef;
-    --main-text-color: #29213f;
-    --accent-color: tomato;
+    --main-bg-color: rgb(225, 248, 244);
+    --main-text-color: #49494b;
+    --accent-color: Blue;
     --hover-color: hotpink;
     --font-size-base: 16px;
 }
@@ -40,13 +40,16 @@ h1, h2, h3 {
 
 header {
     padding: 2rem 4rem;
-    border-bottom: 2px solid var(--main-text-color);
+    color: var(--main-bg-color);
+    background-color: blue;
+    border-bottom: 2px solid var(--accent-color);
     text-align: center;
 }
 
 header h1 {
-    color: var(--accent-color);
-    text-decoration: underline;
+    color: var(--main-bg-color);
+    text-decoration: none;
+    margin-bottom: 0.5rem;
 }
 
 header ul {
@@ -69,6 +72,8 @@ header img {
     display: block;
     aspect-ratio: 1;
     border-radius: 50%;
+    background-color: var(--main-bg-color);
+    border: 5px solid var(--hover-color);
     object-fit: cover;
     filter: grayscale(1); /* Always in grayscale */
     margin: 1rem auto;
