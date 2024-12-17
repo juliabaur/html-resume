@@ -1,0 +1,223 @@
+/**
+
+ * ------------------------------------------
+ *  Responsive Grid Media Queries - 1280, 1024, 768, 480, 400
+ *   1280-1024   - desktop (default grid)
+ *   1024-768    - tablet landscape
+ *   768-480     - tablet 
+ *   480-400     - small phone
+ *   400-less    - very small devices
+ * --------------------------------------------
+ */
+
+/* Root variables for reusable values */
+:root {
+    --main-bg-color: #efefef;
+    --main-text-color: #29213f;
+    --accent-color: tomato;
+    --hover-color: hotpink;
+    --font-size-base: 16px;
+}
+
+/* Global defaults */
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI',
+        Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    background-color: var(--main-bg-color);
+    font-size: var(--font-size-base);
+}
+
+h1, h2, h3 {
+    margin-top: 3rem;
+    
+}
+
+header {
+    padding: 2rem 4rem;
+    border-bottom: 2px solid var(--main-text-color);
+    text-align: center;
+}
+
+header h1 {
+    color: var(--accent-color);
+    text-decoration: underline;
+}
+
+header ul {
+    list-style: none;
+    padding: 0;
+    
+}
+
+header a {
+    color: inherit;
+    text-decoration: none;
+    font-style: normal;
+}
+
+header a:hover {
+    color: var(--hover-color);
+}
+
+header img {
+    display: block;
+    aspect-ratio: 1;
+    border-radius: 50%;
+    object-fit: cover;
+    filter: grayscale(1); /* Always in grayscale */
+    margin: 1rem auto;
+}
+
+main {
+    margin: 2rem 4rem;
+}
+
+main section {
+    margin-bottom: 3rem;
+}
+
+p {
+    max-width: 80ch;
+    
+}
+
+section {
+    font-size: 0.8rem;
+    letter-spacing: 0.5px;
+}
+
+section li {
+    margin: 0.5rem;
+}
+
+section li h3 {
+    margin-bottom: 1rem;
+    margin-top: 1rem;
+    
+}
+
+/* Responsive Design Media Queries */
+
+/* Smartphones */
+@media all and (max-width: 480px) {
+    body {
+        font-size: 14px;
+    }
+}
+
+/* Very small screens (less than 400px) */
+@media all and (max-width: 400px) {
+    header {
+        display: flex;
+        flex-direction: column; /* Stack content vertically */
+        align-items: center;   /* Center horizontally */
+        justify-content: center; /* Center vertically */
+        padding: 1rem; /* Reduce padding for smaller screens */
+        text-align: center;
+    }
+
+    header h1 {
+        font-size: 1.5rem; /* Adjust font size */
+        text-align: center; /* Center the title */
+    }
+
+    header img {
+        width: 80px; /* Adjust image size */
+        height: auto;
+        filter: grayscale(1); /* Keep grayscale */
+    }
+
+    header ul {
+        display: flex;
+        flex-direction: column; /* Stack navigation items */
+        align-items: center;    /* Center links */
+        padding: 0;
+        text-align: center; /* Additional centering */
+    }
+
+    header a {
+        font-size: 0.9rem; /* Reduce font size for links */
+        margin: 0.5rem 0; /* Add spacing between links */
+    }
+
+    p {
+        text-align: left; 
+    }
+
+  
+
+/* Tablets */
+@media all and (min-width: 481px) and (max-width: 768px) {
+    body {
+        font-size: 15px;
+    }
+}
+
+/* Tablets Landscape */
+@media all and (min-width: 768px) and (max-width: 1024px) {
+    main {
+        margin: 1rem 3rem;
+    }
+}
+
+/* Desktops */
+@media all and (min-width: 1024px) and (max-width: 1280px) {
+    main {
+        margin: 2rem 6rem;
+    }
+}
+
+/* Portrait */
+@media screen and (orientation: portrait) {
+    header {
+        padding: 1.5rem 3rem;
+    }
+}
+
+/* Landscape */
+@media screen and (orientation: landscape) {
+    header {
+        padding: 2.5rem 5rem;
+    }
+}
+
+/* Retina Displays */
+@media only screen and (min-resolution: 2dppx) {
+    header img {
+        filter: grayscale(1); /* Keep grayscale */
+    }
+}
+
+/* iPhone Portrait */
+@media screen and (max-device-width: 480px) and (orientation: portrait) {
+    header {
+        text-align: center; /* Center for iPhone portrait mode */
+    }
+}
+
+/* iPhone Landscape */
+@media screen and (max-device-width: 480px) and (orientation: landscape) {
+    header {
+        text-align: center; /* Center for iPhone landscape mode */
+    }
+}
+
+/* iPad Portrait */
+@media screen and (min-device-width: 481px) and (orientation: portrait) {
+    main {
+        margin: 2rem 2rem;
+    }
+}
+
+/* iPad Landscape */
+@media screen and (min-device-width: 481px) and (orientation: landscape) {
+    main {
+        margin: 2rem 4rem;
+    }
+}
